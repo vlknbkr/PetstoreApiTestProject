@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Volkan Projects\\Petstore\\PetstoreApiTestProject\\PetstoreApiTestProject.csproj": {}
+    "C:\\Volkan Projects\\Petstore_Project\\PetstoreApiTestProject\\PetstoreApiTestProject.csproj": {}
   },
   "projects": {
-    "c:\\Volkan Projects\\Petstore\\PetstoreApiTestProject\\PetstoreApiTestProject.csproj": {
+    "C:\\Volkan Projects\\Petstore_Project\\PetstoreApiTestProject\\PetstoreApiTestProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Volkan Projects\\Petstore\\PetstoreApiTestProject\\PetstoreApiTestProject.csproj",
+        "projectUniqueName": "C:\\Volkan Projects\\Petstore_Project\\PetstoreApiTestProject\\PetstoreApiTestProject.csproj",
         "projectName": "PetstoreApiTestProject",
-        "projectPath": "c:\\Volkan Projects\\Petstore\\PetstoreApiTestProject\\PetstoreApiTestProject.csproj",
+        "projectPath": "C:\\Volkan Projects\\Petstore_Project\\PetstoreApiTestProject\\PetstoreApiTestProject.csproj",
         "packagesPath": "C:\\Users\\volka\\.nuget\\packages\\",
-        "outputPath": "c:\\Volkan Projects\\Petstore\\PetstoreApiTestProject\\obj\\",
+        "outputPath": "C:\\Volkan Projects\\Petstore_Project\\PetstoreApiTestProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\volka\\AppData\\Roaming\\NuGet\\NuGet.Config"
