@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Volkan Projects\\Petstore_Project\\PetstoreApiTestProject\\PetstoreApiTestProject.csproj": {}
+    "c:\\Volkan Projects\\Petstore_Project\\PetstoreApiTestProject\\PetstoreApiTestProject.csproj": {}
   },
   "projects": {
-    "C:\\Volkan Projects\\Petstore_Project\\PetstoreApiTestProject\\PetstoreApiTestProject.csproj": {
+    "c:\\Volkan Projects\\Petstore_Project\\PetstoreApiTestProject\\PetstoreApiTestProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Volkan Projects\\Petstore_Project\\PetstoreApiTestProject\\PetstoreApiTestProject.csproj",
+        "projectUniqueName": "c:\\Volkan Projects\\Petstore_Project\\PetstoreApiTestProject\\PetstoreApiTestProject.csproj",
         "projectName": "PetstoreApiTestProject",
-        "projectPath": "C:\\Volkan Projects\\Petstore_Project\\PetstoreApiTestProject\\PetstoreApiTestProject.csproj",
+        "projectPath": "c:\\Volkan Projects\\Petstore_Project\\PetstoreApiTestProject\\PetstoreApiTestProject.csproj",
         "packagesPath": "C:\\Users\\volka\\.nuget\\packages\\",
-        "outputPath": "C:\\Volkan Projects\\Petstore_Project\\PetstoreApiTestProject\\obj\\",
+        "outputPath": "c:\\Volkan Projects\\Petstore_Project\\PetstoreApiTestProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\volka\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -38,6 +38,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.2.0, )"
+            },
             "JsonHelper": {
               "target": "Package",
               "version": "[1.0.0, )"

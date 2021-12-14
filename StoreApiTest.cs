@@ -1,20 +1,17 @@
 using RestSharp;
 using NUnit.Framework;
 using System;
+using FluentAssertions;
 namespace PetstoreApiTestProject;
 
-public class Tests
+public class StoreApiTest
 {
     private const string BASE_URL = "https://petstore.swagger.io";
     private const string orderID = "2";
 
 
-    /**
-    * /v2/store/order/ endpoint 400 Bad request case
-    * @id field requseted as string instead of int
-    **/
-    [Test, Order(1)]
-    public void postByOrderID_400()
+    [Test, Order(1), Description("id fields has unvalid type")]
+    public void BadRequest_ResponseForUnvalidField()
     {
         string jsonData =   "{\"id\": aa," +
                             "\"petId\": 0," +
@@ -32,16 +29,13 @@ public class Tests
         IRestResponse response = restClient.Execute(restRequest);
         var content = response.Content;
         Console.WriteLine("content :" + content);
-            
-        Assert.AreEqual("BadRequest", response.StatusCode.ToString());
+
+        response.StatusCode.ToString().Should().Be("BadRequest");
     }
 
-    /**
-    * /v2/store/order/ endpoint 200 OK case
-    * enpoint requested with below json body
-    **/
-    [Test, Order(2)]
-    public void postByOrderID_200()
+
+    [Test, Order(2), Description("/v2/store/order/ 200 OK Request")]
+    public void OK_ResponseForValidFields()
     {
         string jsonData =   "{\"id\": 2," +
                             "\"petId\": 0," +
@@ -60,16 +54,13 @@ public class Tests
         var content = response.Content;
         Console.WriteLine("content :" + content);
 
-        Assert.AreEqual("OK", response.StatusCode.ToString());
-    
+        response.StatusCode.ToString().Should().Be("OK");
+
     }
 
-    /**
-    * /v2/store/order/{orderId} endpoint 200 OK case
-    * for GET method. 
-    **/
-    [Test, Order(3)]
-    public void getByOrderID_200()
+
+    [Test, Order(3), Description("Available order id requested")]
+    public void OK_ResponseforAvailableOrderID()
     {
         var restClient = new RestClient(BASE_URL);
         var restRequest = new RestRequest("/v2/store/order/" + orderID, Method.GET);
@@ -80,15 +71,12 @@ public class Tests
         var content = response.Content;
         Console.WriteLine("content :" + content);
 
-        Assert.AreEqual("OK", response.StatusCode.ToString());
+        response.StatusCode.ToString().Should().Be("OK");
     }
 
-    /**
-    * /v2/store/order/{orderId} endpoint 200 OK case
-    * for DELETE method.
-    **/
-    [Test, Order(4)]
-    public void deleteByOrderID_200()
+
+    [Test, Order(4), Description("Delete existing order id")]
+    public void OK_ResponseForExistOrderId()
     {
         var restClient = new RestClient(BASE_URL);
         var restRequest = new RestRequest("/v2/store/order/" + orderID, Method.DELETE);
@@ -99,18 +87,16 @@ public class Tests
         var content = response.Content;
         Console.WriteLine("content :" + content);
 
-        Assert.AreEqual("OK", response.StatusCode.ToString());    
+        response.StatusCode.ToString().Should().Be("OK");
 
     }
 
-    /**
-    * /v2/store/order/{orderId} endpoint 404 Not Found case
-    **/
-    [Test, Order(5)]
-    public void getByOrderID_404()
+
+    [Test, Order(5), Description("Delete Unexist order id")]
+    public void NotFound_ResponseForUnExistOrderId()
     {
         var restClient = new RestClient(BASE_URL);
-        var restRequest = new RestRequest("/v2/store/order/" + orderID, Method.GET);
+        var restRequest = new RestRequest("/v2/store/order/888", Method.GET);
         restRequest.AddHeader("accept", "application/json");
         restRequest.RequestFormat = DataFormat.Json;
 
@@ -118,34 +104,12 @@ public class Tests
         var content = response.Content;
         Console.WriteLine("content :" + content);
 
-        Assert.AreEqual("NotFound", response.StatusCode.ToString());
+        response.StatusCode.ToString().Should().Be("NotFound");
     }
 
-    /**
-    * /v2/store/order/{orderId} endpoint 200 OK case
-    * for DELETE method.
-    **/
-    [Test, Order(6)]
-    public void deleteByOrderID_404()
-    {        
-        var restClient = new RestClient(BASE_URL);
-        var restRequest = new RestRequest("/v2/store/order/12", Method.DELETE);
-        restRequest.AddHeader("accept", "application/json");
-        restRequest.RequestFormat = DataFormat.Json;
 
-        IRestResponse response = restClient.Execute(restRequest);
-        var content = response.Content;
-        Console.WriteLine("content :" + content);
-
-        Assert.AreEqual("NotFound", response.StatusCode.ToString());
-    }
-
-    /**
-    * /v2/store/inventory endpoint 200 OK case
-    * it should be Returns a map of status codes to quantities
-    **/
-    [Test, Order(7)]
-    public void getInventory_200()
+    [Test, Order(6), Description("map of status codes to quantities")]
+    public void OK_ResponseForMapOfStatusCodes()
     {
         var restClient = new RestClient(BASE_URL);
         var restRequest = new RestRequest("/v2/store/inventory", Method.GET);
@@ -155,6 +119,7 @@ public class Tests
         var content = response.Content;
         Console.WriteLine("content :" + content);
 
-        Assert.AreEqual("OK", response.StatusCode.ToString());
+        response.StatusCode.ToString().Should().Be("OK");
     }
+
 }

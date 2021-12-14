@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "TnJ+HXRbG+Im+Sa/CIEqzIUgOqTEZ6TzfgQScT1l21f/J9vA9RTyrnJpUO4POMVLwWT7PKfnLYMPFhrAZXESTQ==",
+  "dgSpecHash": "kqbeekw/haZ1sjUjvLLroUaNe2RcgbQ0ZI1+PaFWcViZ0pb9UYN8kAliKLtc9YR2/W7m1GI602ben5tHH8sM/w==",
   "success": true,
-  "projectFilePath": "C:\\Volkan Projects\\Petstore_Project\\PetstoreApiTestProject\\PetstoreApiTestProject.csproj",
+  "projectFilePath": "c:\\Volkan Projects\\Petstore_Project\\PetstoreApiTestProject\\PetstoreApiTestProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\volka\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512",
+    "C:\\Users\\volka\\.nuget\\packages\\fluentassertions\\6.2.0\\fluentassertions.6.2.0.nupkg.sha512",
     "C:\\Users\\volka\\.nuget\\packages\\jsonhelper\\1.0.0\\jsonhelper.1.0.0.nupkg.sha512",
     "C:\\Users\\volka\\.nuget\\packages\\microsoft.codecoverage\\16.11.0\\microsoft.codecoverage.16.11.0.nupkg.sha512",
     "C:\\Users\\volka\\.nuget\\packages\\microsoft.net.test.sdk\\16.11.0\\microsoft.net.test.sdk.16.11.0.nupkg.sha512",
@@ -17,7 +18,9 @@
     "C:\\Users\\volka\\.nuget\\packages\\nunit\\3.13.2\\nunit.3.13.2.nupkg.sha512",
     "C:\\Users\\volka\\.nuget\\packages\\nunit3testadapter\\4.0.0\\nunit3testadapter.4.0.0.nupkg.sha512",
     "C:\\Users\\volka\\.nuget\\packages\\restsharp\\106.15.0\\restsharp.106.15.0.nupkg.sha512",
-    "C:\\Users\\volka\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512"
+    "C:\\Users\\volka\\.nuget\\packages\\system.configuration.configurationmanager\\4.4.0\\system.configuration.configurationmanager.4.4.0.nupkg.sha512",
+    "C:\\Users\\volka\\.nuget\\packages\\system.reflection.metadata\\1.6.0\\system.reflection.metadata.1.6.0.nupkg.sha512",
+    "C:\\Users\\volka\\.nuget\\packages\\system.security.cryptography.protecteddata\\4.4.0\\system.security.cryptography.protecteddata.4.4.0.nupkg.sha512"
   ],
   "logs": []
 }
