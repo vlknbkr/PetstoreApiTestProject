@@ -7,11 +7,11 @@ namespace PetstoreApiTestProject;
 public class StoreApiTest
 {
     private const string BASE_URL = "https://petstore.swagger.io";
-    private const string orderID = "2";
+    private const string ORDER_ID = "2";
 
 
     [Test, Order(1), Description("id fields has unvalid type")]
-    public void BadRequest_ResponseForUnvalidField()
+    public void Should_Return_BadRequest_ForUnvalidField()
     {
         string jsonData =   "{\"id\": aa," +
                             "\"petId\": 0," +
@@ -35,7 +35,7 @@ public class StoreApiTest
 
 
     [Test, Order(2), Description("/v2/store/order/ 200 OK Request")]
-    public void OK_ResponseForValidFields()
+    public void Should_Return_OK_ForValidFields()
     {
         string jsonData =   "{\"id\": 2," +
                             "\"petId\": 0," +
@@ -60,10 +60,10 @@ public class StoreApiTest
 
 
     [Test, Order(3), Description("Available order id requested")]
-    public void OK_ResponseforAvailableOrderID()
+    public void Should_Return_OK_ForAvailableOrderID()
     {
         var restClient = new RestClient(BASE_URL);
-        var restRequest = new RestRequest("/v2/store/order/" + orderID, Method.GET);
+        var restRequest = new RestRequest("/v2/store/order/" + ORDER_ID, Method.GET);
         restRequest.AddHeader("accept", "application/json");
         restRequest.RequestFormat = DataFormat.Json;
 
@@ -76,10 +76,10 @@ public class StoreApiTest
 
 
     [Test, Order(4), Description("Delete existing order id")]
-    public void OK_ResponseForExistOrderId()
+    public void Should_Return_OK_ForExistOrderId()
     {
         var restClient = new RestClient(BASE_URL);
-        var restRequest = new RestRequest("/v2/store/order/" + orderID, Method.DELETE);
+        var restRequest = new RestRequest("/v2/store/order/" + ORDER_ID, Method.DELETE);
         restRequest.AddHeader("accept", "application/json");
         restRequest.RequestFormat = DataFormat.Json;
 
@@ -93,7 +93,7 @@ public class StoreApiTest
 
 
     [Test, Order(5), Description("Delete Unexist order id")]
-    public void NotFound_ResponseForUnExistOrderId()
+    public void Should_Return_NotFound_ForUnexistOrderId()
     {
         var restClient = new RestClient(BASE_URL);
         var restRequest = new RestRequest("/v2/store/order/888", Method.GET);
@@ -109,7 +109,7 @@ public class StoreApiTest
 
 
     [Test, Order(6), Description("map of status codes to quantities")]
-    public void OK_ResponseForMapOfStatusCodes()
+    public void Should_Return_OK_ForMapOfStatusCodes()
     {
         var restClient = new RestClient(BASE_URL);
         var restRequest = new RestRequest("/v2/store/inventory", Method.GET);
